@@ -1,0 +1,5 @@
+# ID item trong MMOItems (khớp với CANH_HAC_AM trong armor.yml)
+item-id: CANH_HAC_AM
+
+# Thời gian hồi (giây). Nhớ sửa cả dòng "Hồi chiêu" trong lore nếu đổi số này.
+cooldown-seconds: 120

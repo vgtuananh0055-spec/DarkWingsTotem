@@ -1,0 +1,5 @@
+name: DarkWingsTotem
+version: 1.0.0
+main: vn.darkwings.DarkWingsTotem
+api-version: '1.21'
+depend: [MythicLib, MMOItems]
