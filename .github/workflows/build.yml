@@ -1,0 +1,23 @@
+# Tạo file này trên GitHub với đường dẫn: .github/workflows/build.yml
+name: Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Build jar
+        run: mvn -B package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DarkWingsTotem
+          path: target/DarkWingsTotem-*.jar
+          
