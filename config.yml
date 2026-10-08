@@ -1,18 +1,44 @@
-# ID item trong MMOItems (khớp với CANH_HAC_AM trong armor.yml)
-item-id: CANH_HAC_AM
+# Mỗi mục dưới "items" là 1 ID item trong MMOItems (viết đúng ID, ví dụ CANH_HAC_AM).
+# Thêm item mới: copy nguyên khối bên dưới, đổi ID và chỉnh số liệu,
+# rồi gõ /dwtotem reload (không cần restart, không cần build lại).
+#
+# Item cần có 1 dòng lore chứa chữ "Hồi chiêu" (hoặc chữ bạn đặt ở lore-marker)
+# để plugin thay bằng thời gian đếm ngược.
+items:
+  CANH_HAC_AM:
+    # Ô trang bị để totem hoạt động: HEAD, CHEST, LEGS, FEET, HAND, OFF_HAND
+    slot: CHEST
+    cooldown-seconds: 120
+    # Máu còn lại sau khi được cứu
+    health: 1.0
+    # Hiệu ứng nhận được, dạng tên:giây:cấp (tên theo Minecraft, viết thường)
+    effects:
+      - regeneration:45:2
+      - absorption:5:2
+      - fire_resistance:40:1
+    # {cooldown} = tổng thời gian hồi, ví dụ 2:00
+    message: "&5Cánh Hắc Ám đã cứu bạn khỏi cái chết! &7Hồi chiêu {cooldown}."
+    ready-message: "&dCánh Hắc Ám đã sẵn sàng!"
+    lore-marker: "Hồi chiêu"
+    # Dòng lore khi sẵn sàng: nên giống hệt dòng trong file item của MMOItems
+    lore-ready: "&8» &5Hồi chiêu: &f2 phút &7(120 giây)"
+    # Dòng lore khi đang hồi: {time} = thời gian còn lại, ví dụ 1:45
+    lore-cooling: "&8» &5Hồi chiêu: &c{time} &7(đang hồi)"
 
-# Thời gian hồi (giây).
-cooldown-seconds: 120
+  # Ví dụ item thứ 2 (bỏ dấu # ở đầu mỗi dòng để dùng, nhớ đổi ID cho đúng):
+  # MU_BAT_TU:
+  #   slot: HEAD
+  #   cooldown-seconds: 300
+  #   health: 4.0
+  #   effects:
+  #     - regeneration:20:1
+  #     - resistance:10:2
+  #   message: "&6Mũ đã cứu bạn! &7Hồi chiêu {cooldown}."
+  #   ready-message: "&eMũ đã sẵn sàng!"
+  #   lore-marker: "Hồi chiêu"
+  #   lore-ready: "&8» &6Hồi chiêu: &f5 phút"
+  #   lore-cooling: "&8» &6Hồi chiêu: &c{time}"
 
-# --- Dòng hồi chiêu trong lore ---
-# Plugin tìm dòng lore có chứa chữ này để thay nội dung
-lore-marker: "Hồi chiêu"
-
-# Khi sẵn sàng: nên giống hệt dòng trong armor.yml (nhớ sửa số nếu đổi cooldown-seconds)
-lore-ready: "&8» &5Hồi chiêu: &f2 phút &7(120 giây)"
-
-# Khi đang hồi: {time} sẽ thành thời gian còn lại, ví dụ 1:45
-lore-cooling: "&8» &5Hồi chiêu: &c{time} &7(đang hồi)"
-
-# Cập nhật lore mỗi bao nhiêu giây. Nếu nghe tiếng mặc giáp lặp lại hoặc bị lag, tăng lên 3-5.
+# Cập nhật lore mỗi bao nhiêu giây (áp dụng cho mọi item).
+# Nếu nghe tiếng mặc giáp lặp lại hoặc bị lag, tăng lên 3-5.
 lore-update-seconds: 1
