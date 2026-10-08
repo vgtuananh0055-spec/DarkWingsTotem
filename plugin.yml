@@ -1,5 +1,16 @@
 name: DarkWingsTotem
-version: 1.0.0
+version: 1.1.0
 main: vn.darkwings.DarkWingsTotem
 api-version: '1.21'
+authors: [KaiTouu]
+description: mọi vật phẩm của bạn đều có thể mang totem
 depend: [MythicLib, MMOItems]
+commands:
+  dwtotem:
+    description: Tải lại config DarkWingsTotem
+    usage: /dwtotem reload
+    permission: darkwingstotem.admin
+permissions:
+  darkwingstotem.admin:
+    description: Dùng lệnh /dwtotem
+    default: op
