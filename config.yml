@@ -1,5 +1,18 @@
 # ID item trong MMOItems (khớp với CANH_HAC_AM trong armor.yml)
 item-id: CANH_HAC_AM
 
-# Thời gian hồi (giây). Nhớ sửa cả dòng "Hồi chiêu" trong lore nếu đổi số này.
+# Thời gian hồi (giây).
 cooldown-seconds: 120
+
+# --- Dòng hồi chiêu trong lore ---
+# Plugin tìm dòng lore có chứa chữ này để thay nội dung
+lore-marker: "Hồi chiêu"
+
+# Khi sẵn sàng: nên giống hệt dòng trong armor.yml (nhớ sửa số nếu đổi cooldown-seconds)
+lore-ready: "&8» &5Hồi chiêu: &f2 phút &7(120 giây)"
+
+# Khi đang hồi: {time} sẽ thành thời gian còn lại, ví dụ 1:45
+lore-cooling: "&8» &5Hồi chiêu: &c{time} &7(đang hồi)"
+
+# Cập nhật lore mỗi bao nhiêu giây. Nếu nghe tiếng mặc giáp lặp lại hoặc bị lag, tăng lên 3-5.
+lore-update-seconds: 1
